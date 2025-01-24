@@ -1,5 +1,5 @@
 # Desenvolvimento de Coding challenge PHP.
-Pequena aplicação REST API com laravel 11 como Rest API;
+Pequena aplicação REST API com laravel 10.3 como Rest API;
 
 
 ### para iniciar o React:
