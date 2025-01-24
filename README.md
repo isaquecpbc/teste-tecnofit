@@ -14,7 +14,7 @@ Pequena aplicação REST API com laravel 10.3 como Rest API;
 
 ### Para iniciar o laravel com o docker:
 
-#### Talvez precise inicializar o Docker em seu WLS : ``` $ sudo service docker start ```
+#### Talvez precise inicializar o Docker em seu WSL : ``` $ sudo service docker start ```
 
 1. na raiz do projeto, ``` $ cd tecnofit-api ```
 2. ``` $ docker-compose up -d ```
