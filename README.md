@@ -2,16 +2,6 @@
 Pequena aplicação REST API com laravel 10.3 como Rest API;
 
 
-### para iniciar o React:
-
-
-1. na raiz do projeto, ``` $ cd tecnofit-app ```
-2. ``` $ npm install ```
-3. ``` $ npm start ```
-
-### Teste o acesso do app em http://localhost:3000/
-
-
 ### Para iniciar o laravel com o docker:
 
 #### Talvez precise inicializar o Docker em seu WSL : ``` $ sudo service docker start ```
