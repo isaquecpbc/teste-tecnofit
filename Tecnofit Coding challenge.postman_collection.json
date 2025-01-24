@@ -1,0 +1,789 @@
+{
+	"info": {
+		"_postman_id": "d326a987-7e45-4abe-9243-178f1f84f979",
+		"name": "Tecnofit Coding challenge",
+		"description": "PHP Laravel API project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10250448"
+	},
+	"item": [
+		{
+			"name": "user_information",
+			"item": [
+				{
+					"name": "get user_information",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/api/user_information",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"user_information"
+							]
+						},
+						"description": "get tasks model "
+					},
+					"response": []
+				},
+				{
+					"name": "store user_information",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "mother_name",
+									"value": "Mother teste create",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "47955443322",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost/api/user_information",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"user_information"
+							]
+						},
+						"description": "Store task by form-data inputs"
+					},
+					"response": []
+				},
+				{
+					"name": "update user_information",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": \"4\",\n    \"mother_name\": \"Mother teste update\",\n    \"phone\": \"47955443311\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/api/user_information/3",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"user_information",
+								"3"
+							]
+						},
+						"description": "put update task by raw text type json"
+					},
+					"response": []
+				},
+				{
+					"name": "get user_information by logged user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/api/user_information/get_infos_by_user/list",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"user_information",
+								"get_infos_by_user",
+								"list"
+							]
+						},
+						"description": "Get list of tasks by logged user"
+					},
+					"response": []
+				},
+				{
+					"name": "delete user_information",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": \"2\",\n    \"title\": \"Profundezas do Oceano Pacifico\",\n    \"type\": \"Viagem\",\n    \"description\": \"BoJack embarca em uma aventura nas desconhecidas profundezas do Oceano para poder assistir à estreia de seu filme Secretariat. Sem álcool, drogas ou com quem conversar, o cavalo reencontra uma antiga colega de trabalho que decepcionou no passado e tenta de todas as formas se redimir. O silêncio nunca foi tão ensurdecedor na TV.\",\n    \"status\": false,\n    \"start_at\": \"2024-07-18 05:00:00\",\n    \"conclusion_at\": \"2024-07-18 23:45:00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/api/user_information/3",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"user_information",
+								"3"
+							]
+						},
+						"description": "put update task by raw text type json"
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS9hdXRoL2xvZ2luIiwiaWF0IjoxNzI2MjYxNjIyLCJleHAiOjE3MjYyNjUyMjIsIm5iZiI6MTcyNjI2MTYyMiwianRpIjoiandYZzFBMTNlOTY1ZUt2UyIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.t98S6qkeFLQ7zxOdjpy-0zEf8FwHLKjFvxFiA3yEbLE",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "get users",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/api/users",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						},
+						"description": "get tasks model "
+					},
+					"response": []
+				},
+				{
+					"name": "store users",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "User teste create",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost/api/users",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						},
+						"description": "Store task by form-data inputs"
+					},
+					"response": []
+				},
+				{
+					"name": "update users",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"User teste update\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/api/users/13",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"users",
+								"13"
+							]
+						},
+						"description": "put update task by raw text type json"
+					},
+					"response": []
+				},
+				{
+					"name": "delete users",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/api/users/13",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"users",
+								"13"
+							]
+						},
+						"description": "Post for update only status of task"
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS9hdXRoL2xvZ2luIiwiaWF0IjoxNzI2MjYxNjIyLCJleHAiOjE3MjYyNjUyMjIsIm5iZiI6MTcyNjI2MTYyMiwianRpIjoiandYZzFBMTNlOTY1ZUt2UyIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.t98S6qkeFLQ7zxOdjpy-0zEf8FwHLKjFvxFiA3yEbLE",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "movements",
+			"item": [
+				{
+					"name": "get movements",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/api/movements",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"movements"
+							]
+						},
+						"description": "get tasks model "
+					},
+					"response": []
+				},
+				{
+					"name": "store movements",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Movement teste create",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost/api/movements",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"movements"
+							]
+						},
+						"description": "Store task by form-data inputs"
+					},
+					"response": []
+				},
+				{
+					"name": "update movements",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Movement teste update\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/api/movements/4",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"movements",
+								"4"
+							]
+						},
+						"description": "put update task by raw text type json"
+					},
+					"response": []
+				},
+				{
+					"name": "delete movements",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/api/movements/4",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"movements",
+								"4"
+							]
+						},
+						"description": "Post for update only status of task"
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS9hdXRoL2xvZ2luIiwiaWF0IjoxNzI2MjYxNjIyLCJleHAiOjE3MjYyNjUyMjIsIm5iZiI6MTcyNjI2MTYyMiwianRpIjoiandYZzFBMTNlOTY1ZUt2UyIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.t98S6qkeFLQ7zxOdjpy-0zEf8FwHLKjFvxFiA3yEbLE",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "personal-records",
+			"item": [
+				{
+					"name": "get personal records",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/api/personal-records",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"personal-records"
+							]
+						},
+						"description": "get tasks model "
+					},
+					"response": []
+				},
+				{
+					"name": "store personal records",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user_id",
+									"value": "13",
+									"type": "text"
+								},
+								{
+									"key": "movement_id",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "value",
+									"value": "72.4",
+									"type": "text"
+								},
+								{
+									"key": "date",
+									"value": "2024-12-25 00:00:00",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost/api/personal-records",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"personal-records"
+							]
+						},
+						"description": "Store task by form-data inputs"
+					},
+					"response": []
+				},
+				{
+					"name": "update personal records",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"value\": \"86.1\",\n    \"date\": \"2024-12-25 15:15:15\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/api/personal-records/4",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"personal-records",
+								"4"
+							]
+						},
+						"description": "put update task by raw text type json"
+					},
+					"response": []
+				},
+				{
+					"name": "delete personal record",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/api/personal-records/4",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"personal-records",
+								"4"
+							]
+						},
+						"description": "Post for update only status of task"
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS9hdXRoL2xvZ2luIiwiaWF0IjoxNzI2MjYxNjIyLCJleHAiOjE3MjYyNjUyMjIsIm5iZiI6MTcyNjI2MTYyMiwianRpIjoiandYZzFBMTNlOTY1ZUt2UyIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.t98S6qkeFLQ7zxOdjpy-0zEf8FwHLKjFvxFiA3yEbLE",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "localhost",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL2FwaVwvYXV0aFwvbG9naW4iLCJpYXQiOjE2NTU3NzkwOTYsImV4cCI6MTY1NTc4MjY5NiwibmJmIjoxNjU1Nzc5MDk2LCJqdGkiOiJScVlWZWhJeFZxRk5hYUJPIiwic3ViIjo4LCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.lUdI7jxPdaWSJfVSQyJaZP7m7fsRO5w-ZfVqbSFpdQg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost/",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						""
+					]
+				},
+				"description": "get tasks model "
+			},
+			"response": []
+		},
+		{
+			"name": "get ranking",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost/api/personal-records/ranking/list",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"personal-records",
+						"ranking",
+						"list"
+					]
+				},
+				"description": "get tasks model "
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

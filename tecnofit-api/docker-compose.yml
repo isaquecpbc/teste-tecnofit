@@ -1,0 +1,64 @@
+version: '2.0'
+services:
+ 
+  #PHP Service
+  tecnofit_api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: cloudsigma.com/php
+    container_name: tecnofit_api
+    restart: unless-stopped
+    tty: true
+    environment:
+      SERVICE_NAME: tecnofit_api
+      SERVICE_TAGS: dev
+    working_dir: /var/www/html/
+    volumes:
+      - ./:/var/www/html/
+      - ./php/laravel.ini:/usr/local/etc/php/conf.d/laravel.ini
+    networks:
+      - app-network
+ 
+  #Nginx Service
+  tecnofit_webserver:
+    image: nginx:alpine
+    container_name: webserver
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./:/var/www/html/
+      - ./nginx/conf.d/:/etc/nginx/conf.d/
+    networks:
+      - app-network
+ 
+  #MySQL Service
+  tecnofit_db:
+    image: mysql:5.7.32
+    container_name: tecnofit_db
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: tecnofit_app
+      MYSQL_ROOT_PASSWORD: tecnofit_app
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    volumes:
+      - tecnofit_dbdata:/var/lib/mysql/
+      - ./mysql/my.cnf:/etc/mysql/my.cnf
+    networks:
+      - app-network
+ 
+#Docker Networks
+networks:
+  app-network:
+    driver: bridge
+#Volumes
+volumes:
+  tecnofit_dbdata:
+    driver: local
